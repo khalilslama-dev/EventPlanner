@@ -7,7 +7,7 @@ namespace EventPlanner.Repositories
 {
     public class UserRepository : BaseRepository<User>, IUserRepository
     {
-        public UserRepository(GestionRendezVousContext gestionRendezVousContext) : base(gestionRendezVousContext)
+        public UserRepository(EventPlannerContext gestionRendezVousContext) : base(gestionRendezVousContext)
         {
 
         }

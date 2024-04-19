@@ -17,9 +17,9 @@ builder.Services.AddControllers().AddJsonOptions(options =>
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddAutoMapper(typeof(MappingProfiles).Assembly);
-builder.Services.AddDbContext<GestionRendezVousContext>( options =>
+builder.Services.AddDbContext<EventPlannerContext>( options =>
 {
-    options.UseSqlServer("Server=localhost;Database=EventPlanningDB;Trusted_Connection=True;TrustServerCertificate=True;");
+    options.UseSqlServer(builder.Configuration.GetConnectionString("SQlServer"));
 });
 builder.Services.AddTransient<IUserRepository, UserRepository>();
 builder.Services.AddTransient<IUserService, UserService>();

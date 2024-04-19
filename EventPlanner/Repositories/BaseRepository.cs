@@ -6,9 +6,9 @@ namespace EventPlanner.Repositories
 {
     public class BaseRepository<T> : IDisposable where T : class
     {
-        protected readonly GestionRendezVousContext _gestionRendezVousContext;
+        protected readonly EventPlannerContext _gestionRendezVousContext;
 
-        public BaseRepository(GestionRendezVousContext gestionRendezVousContext)
+        public BaseRepository(EventPlannerContext gestionRendezVousContext)
         {
             _gestionRendezVousContext= gestionRendezVousContext;
         }

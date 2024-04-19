@@ -20,6 +20,5 @@ namespace EventPlanner.Models
         public string PhoneNumber { get; set; }
         public Address Address { get; set; }
         public Collection<Event> Events { get; set; }
-        // public Notes Notes { get; set; }
     }
 }

@@ -24,6 +24,5 @@ namespace EventPlanner.Models
 
         public virtual Address? Address { get; set; }
         public virtual Collection<Event>? Events { get; set; }
-        // public Notes Notes { get; set; }
     }
 }

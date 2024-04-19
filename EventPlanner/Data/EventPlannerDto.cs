@@ -1,21 +1,19 @@
 ﻿using EventPlanner.Models;
-using Humanizer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
 
 namespace EventPlanner.Data
 {
-    public class GestionRendezVousContext : DbContext
+    public class EventPlannerContext : DbContext
     {
         public DbSet<User> users { get; set; }
         public DbSet<Event> events { get; set; }
         public DbSet<Address> addresses { get; set; }
 
-        public GestionRendezVousContext(DbContextOptions options) : base(options)
+        public EventPlannerContext(DbContextOptions options) : base(options)
         {
 
         }
-
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
