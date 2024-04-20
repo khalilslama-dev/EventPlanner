@@ -1,4 +1,6 @@
-﻿using EventPlanner.Models;
+﻿using AutoMapper;
+using EventPlanner.Dtos.UserDtos;
+using EventPlanner.Models;
 using EventPlanner.Services.interfaces;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
@@ -13,10 +15,12 @@ namespace EventPlanner.Controllers
     public class UserController : ControllerBase
     {
         private readonly IUserService _userService;
+        private readonly IMapper _mapper;
 
-        public UserController(IUserService userService)
+        public UserController(IUserService userService, IMapper mapper)
         {
             _userService = userService;
+            _mapper = mapper;
         }
 
 
@@ -24,7 +28,8 @@ namespace EventPlanner.Controllers
         [HttpGet]
         public ActionResult<IEnumerable<User>> Get()
         {
-            return Ok(_userService.getAllWithEvents());
+            var userDtos = _mapper.Map<IEnumerable<User>,IEnumerable<UserDto>>(_userService.getAllWithEvents());
+            return Ok(userDtos);
         }
 
         // get api/<usercontroller>/5

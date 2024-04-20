@@ -1,7 +1,8 @@
 ﻿using System.Collections.ObjectModel;
 using System.ComponentModel.DataAnnotations;
+using EventPlanner.Models;
 
-namespace EventPlanner.Models
+namespace EventPlanner.Dtos.UserDtos
 {
     public class UserDto
     {
@@ -19,6 +20,6 @@ namespace EventPlanner.Models
         [Required]
         public string PhoneNumber { get; set; }
         public Address Address { get; set; }
-        public Collection<Event> Events { get; set; }
+        public ICollection<UserEventsDto> Events { get; set; }
     }
 }

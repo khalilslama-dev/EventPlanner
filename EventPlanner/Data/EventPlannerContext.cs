@@ -17,9 +17,8 @@ namespace EventPlanner.Data
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
+            modelBuilder.Entity<User>().HasMany(user => user.Events).WithMany(Event => Event.users);
             modelBuilder.Entity<User>().HasOne(user => user.Address);
-            modelBuilder.Entity<User>().HasMany<Event>(user => user.Events);
-            modelBuilder.Entity<Event>().HasMany<User>(Event => Event.users);
             modelBuilder.Entity<Event>().HasOne(Event => Event.Address);
         }
     }

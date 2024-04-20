@@ -1,7 +1,8 @@
-﻿using System.Collections.ObjectModel;
+﻿using EventPlanner.Models;
+using System.Collections.ObjectModel;
 using System.ComponentModel.DataAnnotations;
 
-namespace EventPlanner.Models
+namespace EventPlanner.Dtos
 {
     public class EventDto
     {

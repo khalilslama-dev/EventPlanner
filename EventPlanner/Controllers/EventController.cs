@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using EventPlanner.Dtos;
 using EventPlanner.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.ObjectModel;
